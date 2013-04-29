@@ -50,6 +50,8 @@
 
 				<section>
 					<h3>... and I'm one quarter of Geeks of London.</h3>
+					<img src="img/hackcamp.jpg">
+					<p>We're a non-profit that organises geeky events.</p>
 				</section>
 
 				<section>
@@ -155,13 +157,155 @@ gem install middleman
 </code></pre>
 				</section>
 
-
 				<section>
-					<h1>Thank you!</h1>
+					<h3>Creating a Project</h3>
+<pre><code>
+middleman init fesuffolk
 
-					<h3>Slides:</h3>
-					<p>http://github.com/leeky/fesuffolk-hacked/</p>
-				</section>
+create  fesuffolk/.gitignore
+create  fesuffolk/config.rb
+create  fesuffolk/source/index.html.erb
+create  fesuffolk/source/layouts/layout.erb
+create  fesuffolk/source/stylesheets
+create  fesuffolk/source/stylesheets/all.css
+create  fesuffolk/source/stylesheets/normalize.css
+create  fesuffolk/source/javascripts
+create  fesuffolk/source/javascripts/all.js
+create  fesuffolk/source/images
+create  fesuffolk/source/images/background.png
+create  fesuffolk/source/images/middleman.png
+</code></pre>
+			</section>
+
+			<section>
+				<h3>Project Templates</h3>
+<pre><code>
+middleman init fesuffolk --template=amicus
+</code></pre>
+
+<p>Starts with HTML boilerplate, CSS reset, compass, susy etc all ready to go!</p>
+</section>
+
+<section>
+	<h1>Pages</h1>
+</section>
+
+<section>
+	<p>source/example_page.markdown:</p>
+<pre><code contenteditable>
+# Example Page
+
+Here is some content.
+
+* foo
+* bar
+* baz
+</code></pre>
+
+	<p>source/example_page.html.erb</p>
+<pre><code contenteditable>
+	...
+</code></pre>
+<p>... and many more formats!</p>
+
+</section>
+
+
+<section>
+	<h1>Layouts</h1>
+	<p>source/layouts/layout.erb</p>
+<pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;&lt;%= current_page.data.title %&gt;&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body>
+  &lt;div class="content"&gt;
+    &lt;%= yield %&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+</section>
+
+<section>
+	<h1>Partials</h1>
+<p>source/layouts/main.html.erb</p>
+<pre><code>
+&lt;nav class="primary"&gt;
+  &lt;%= partial "layouts/navigation" %&gt;
+&lt;/nav&gt;
+</code></pre>
+<p>source/layouts/_navigation.html.erb</p>
+<pre><code>
+&lt;ul&gt;
+  &lt;li&gt;Home&lt;/li&gt;
+  &lt;li&gt;About&lt;/li&gt;
+  &lt;li&gt;Contact Us&lt;/li&gt;
+&lt;/nav&gt;
+</code></pre>
+</section>
+
+<section>
+	<h1>Previewing</h1>
+<pre><code>
+middleman server
+
+== The Middleman is loading
+== The Middleman is standing watch at http://0.0.0.0:4567
+</code></pre>
+</section>
+
+<section>
+	<h1>Generating</h1>
+<pre><code>
+middleman build
+
+create  build/favicon.ico
+create  build/javascripts/plugins.js
+create  build/javascripts/libs/jquery-1.9.0.min.js
+create  build/javascripts/libs/holder.js
+create  build/javascripts/libs/modernizr-2.6.1.min.js
+create  build/javascripts/script.js
+create  build/stylesheets/animate.css
+create  build/stylesheets/screen.css
+create  build/404.html
+create  build/blog/index.html
+create  build/blog/feed.xml
+create  build/blog/2013/04/24/the-waiting-is-over/index.html
+create  build/welcome/index.html
+...
+</code></pre>
+</section>
+
+<section>
+	<h1>Extensions</h1>
+
+	<ul>
+		<li>middleman-blog</li>
+		<li class="fragment">middleman-livereload</li>
+		<li class="fragment">middleman-deploy</li>
+	</ul>
+</section>
+
+<section>
+	<h1>DEMO</h1>
+</section>
+
+<section>
+	<h1>Questions?</h1>
+</section>
+
+<section>
+	<h1>Thank you!</h1>
+	<img src="img/hacked.png">
+	<h3>20th + 21st July at The O2, London</h3>
+	<p>http://hacked.io</p>
+	<p>@hackedio</p>
+</section>
 
 			</div>
 
